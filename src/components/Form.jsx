@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
+import React, { useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 // cood
 
 function Form({ input, setInput, todos, setTodos, editTodo, setEditTodo }) {
@@ -8,13 +8,13 @@ function Form({ input, setInput, todos, setTodos, editTodo, setEditTodo }) {
       todo.id === id ? { title, id, completed } : todo
     );
     setTodos(newTodo);
-    setEditTodo("");
+    setEditTodo('');
   };
   useEffect(() => {
     if (editTodo) {
       setInput(editTodo.title);
     } else {
-      setInput("");
+      setInput('');
     }
   }, [setInput, editTodo]);
 
@@ -26,7 +26,7 @@ function Form({ input, setInput, todos, setTodos, editTodo, setEditTodo }) {
     e.preventDefault();
     if (!editTodo) {
       setTodos([...todos, { id: uuidv4(), title: input, completed: false }]);
-      setInput("");
+      setInput('');
     } else {
       updateTodo(input, editTodo.id, editTodo.completed);
     }
@@ -42,7 +42,7 @@ function Form({ input, setInput, todos, setTodos, editTodo, setEditTodo }) {
         onChange={onInputChange}
       />
       <button className="button-add" type="submit">
-        {editTodo ? "Edit" : "Add"}
+        {editTodo ? 'Edit' : 'Add'}
       </button>
     </form>
   );

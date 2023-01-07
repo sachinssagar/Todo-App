@@ -1,5 +1,3 @@
-import React from "react";
-
 function TodoList({ todos, setTodos, setEditTodo }) {
   const handleComplete = (todo) => {
     setTodos(
@@ -27,7 +25,7 @@ function TodoList({ todos, setTodos, setEditTodo }) {
           <input
             type="text"
             value={todo.title}
-            className={`list ${todo.completed ? "complete" : ""}`}
+            className={`list ${todo.completed ? 'complete' : ''}`}
             onChange={(e) => e.preventDefault()}
           />
           <div>
