@@ -21,7 +21,7 @@ function TodoList({ todos, setTodos, setEditTodo }) {
   return (
     <div>
       {todos.map((todo) => (
-        <li className="list-item" key={todo.id}>
+        <div className="list-item" key={todo.id}>
           <input
             type="text"
             value={todo.title}
@@ -48,7 +48,7 @@ function TodoList({ todos, setTodos, setEditTodo }) {
               <i className="fa fa-trash"></i>
             </button>
           </div>
-        </li>
+        </div>
       ))}
     </div>
   );

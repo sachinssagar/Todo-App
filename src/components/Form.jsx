@@ -3,13 +3,6 @@ import { v4 as uuidv4 } from 'uuid';
 // cood
 
 function Form({ input, setInput, todos, setTodos, editTodo, setEditTodo }) {
-  const updateTodo = (title, id, completed) => {
-    const newTodo = todos.map((todo) =>
-      todo.id === id ? { title, id, completed } : todo
-    );
-    setTodos(newTodo);
-    setEditTodo('');
-  };
   useEffect(() => {
     if (editTodo) {
       setInput(editTodo.title);
@@ -20,6 +13,14 @@ function Form({ input, setInput, todos, setTodos, editTodo, setEditTodo }) {
 
   const onInputChange = (e) => {
     setInput(e.target.value);
+  };
+
+  const updateTodo = (title, id, completed) => {
+    const newTodo = todos.map((todo) =>
+      todo.id === id ? { title, id, completed } : todo
+    );
+    setTodos(newTodo);
+    setEditTodo('');
   };
 
   const onFormSubmit = (e) => {
