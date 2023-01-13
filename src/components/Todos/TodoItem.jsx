@@ -12,7 +12,7 @@ function TodoItem({ todo, onEdit, onComplete, onDelete }) {
       <div>
         <button
           className="button-complete task-button"
-          onClick={() => onComplete(id)}
+          onClick={() => onComplete(completed, id)}
         >
           <i className="fa fa-check-circle"></i>
         </button>

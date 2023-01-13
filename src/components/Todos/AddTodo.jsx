@@ -16,7 +16,7 @@ function AddTodo({ onAdd, currentTodo, onUpdate }) {
     return () => {
       setValue('');
     };
-  }, [currentTodo.id]);
+  }, [currentTodo?.id]);
 
   const onSave = (e) => {
     e.preventDefault();

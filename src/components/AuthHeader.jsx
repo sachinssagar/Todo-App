@@ -1,12 +1,4 @@
-import { useState, useEffect } from 'react';
-
-import {
-  GoogleAuthProvider,
-  signInWithPopup,
-  getAuth,
-  signOut,
-  onAuthStateChanged,
-} from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 
 import { auth } from '../firebaseConfig';
 
@@ -15,25 +7,6 @@ const provider = new GoogleAuthProvider();
 // provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
 const AuthHeader = ({ user, loggedIn }) => {
-  const [display, setDisplay] = useState(false);
-  // const user = auth.currentUser;
-
-  // const [loggedIn, setLoggedIn] = useState();
-  // auth.onAuthStateChanged((user) => {
-  //   // console.log(user);
-  //   if (user) {
-  //     setLoggedIn(true);
-  //   } else {
-  //     setLoggedIn(false);
-  //   }
-  // });
-
-  // useEffect(() => {
-  //   if (loggedIn !== undefined) {
-  //     //do loggedIn stuff
-  //   }
-  // }, [loggedIn]);
-
   const handleLogin = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
@@ -64,11 +37,6 @@ const AuthHeader = ({ user, loggedIn }) => {
       .catch((error) => {
         // An error happened.
       });
-  };
-
-  const handleDropDown = () => {
-    // code
-    setDisplay(!display);
   };
 
   return (
